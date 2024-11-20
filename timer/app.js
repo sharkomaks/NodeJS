@@ -1,6 +1,6 @@
-let hours = parseInt(process.argv[2]) || 0;
-let minutes = parseInt(process.argv[3]) || 0;
-let seconds = parseInt(process.argv[4]) || 0;
+const hours = parseInt(process.argv[2]) || 0;
+const minutes = parseInt(process.argv[3]) || 0;
+const seconds = parseInt(process.argv[4]) || 0;
 let time;
 
 if (hours < 0 || minutes < 0 || seconds < 0) {
