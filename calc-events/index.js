@@ -5,12 +5,18 @@ const multiply = require('./multiply');
 const divide = require('./divide');
 
 const myEmitter = new EventEmitter;
-let firstNum = Number(process.argv[2]);
-let secondNum = Number(process.argv[3]);
-let operation = process.argv[4];
+const firstNum = Number(process.argv[2]);
+const secondNum = Number(process.argv[3]);
+const operation = process.argv[4];
+const operations = ['add', 'subtract', 'multiply', 'divide'];
 
 if (isNaN(firstNum) || isNaN(secondNum)) {
     console.log('Пожалуйста, укажите два числа в качестве первых аргументов');
+    return;
+}
+
+if (!operations.includes(operation)) {
+    console.log(`Пожалуйста, укажите операцию из списка ${operations.join(', ')}`);
     return;
 }
 
